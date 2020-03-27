@@ -1,9 +1,12 @@
-package org.mybatis.mapper;
+package vic.mybatis.mapper;
 
 import java.util.List;
-import org.mybatis.entity.User;
+import vic.mybatis.entity.User;
+import org.springframework.stereotype.Repository;
 
+@Repository("userDao")
 public interface UserMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

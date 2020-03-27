@@ -10,7 +10,7 @@
     <!--Spring会去自动扫描base-package的值所表示的包的位置中的java文件，
     如果扫描到有@Component、@Controller、@Service、@Repository等类似注解的类，会将这个类注册为Bean-->
     <!-- 扫描web相关的bean -->
-    <context:component-scan base-package="org.controller"/>
+    <context:component-scan base-package="vic.controller"/>
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
     <!-- 静态资源默认servlet配置 -->
@@ -18,6 +18,7 @@
     <!-- 配置jsp 显示ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!-- 此处value="/WEB-INF/views/"，所以Controller中modelAndView.setViewName("show")中直接写jsp文件名。而不是"/show"-->
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp" />
     </bean>
